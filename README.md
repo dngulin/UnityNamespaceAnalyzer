@@ -5,6 +5,17 @@ using the root namespace from a corresponding assembly definition.
 
 It is created to work around this [resaharper-unity issue](https://github.com/JetBrains/resharper-unity/issues/2427).
 
+## How It Works
+
+For every namespace declaration in assembly:
+- get the source file path
+- get the directory name from the file path
+- find the `asmdef`-file in that (or any parent) directory
+- read the root namespace from the assembly definition
+- get relative path between the asmdef and the source file directories
+- combine the root namespace and relative path
+- compare the combined value with the declared one 
+
 ## How to Install
 
 1. Build the library
