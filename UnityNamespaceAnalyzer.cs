@@ -108,7 +108,7 @@ namespace UnityNamespaceAnalyzer
             }
 
             var diff = fileDir.Substring(asmDefDir.Length + 1);
-            var suffix = diff.Replace(Path.PathSeparator, '.');
+            var suffix = diff.Replace(Path.DirectorySeparatorChar, '.');
 
             ns = $"{rootNs}.{suffix}";
             return true;
