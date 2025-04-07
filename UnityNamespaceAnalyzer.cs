@@ -111,7 +111,7 @@ namespace UnityNamespaceAnalyzer
             var suffix = diff.Replace(Path.PathSeparator, '.');
 
             ns = $"{rootNs}.{suffix}";
-            return false;
+            return true;
         }
 
         private static bool TryGetRootNamespace(string asmDefPath, out string ns)
